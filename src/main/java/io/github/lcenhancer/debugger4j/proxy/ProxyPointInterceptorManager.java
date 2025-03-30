@@ -45,7 +45,7 @@ final class ProxyPointInterceptorManager {
     /**
      * ProxyPointInterceptor scanner base package location.
      */
-    private static final String PROXY_POINT_INTERCEPTOR_SCANNER_BASE_PACKAGE = "io.github.jidcoo.opto.lcdb.enhancer.func";
+    private static final String PROXY_POINT_INTERCEPTOR_SCANNER_BASE_PACKAGE = "io.github.lcenhancer.debugger4j.proxy.bi";
 
     /**
      * ProxyPointInterceptor instances map(interceptPoint->List<ProxyPointInterceptor>).

@@ -58,7 +58,7 @@ final class ProxyPointInterceptorManager {
     ProxyPointInterceptorManager() {
         // init all proxy point interceptors.
         proxyPointInterceptorsMap = BeanUtil.collectBeans(ProxyPointInterceptor.class, PROXY_POINT_INTERCEPTOR_SCANNER_BASE_PACKAGE,
-                (Class type) -> {
+                (Class<? extends ProxyPointInterceptor> type) -> {
                     boolean baseValidResult = type.isAnnotationPresent(Require.class)
                             && ReflectUtil.isImplementInterface(type, ProxyPointInterceptor.class)
                             && !Modifier.isAbstract(type.getModifiers());

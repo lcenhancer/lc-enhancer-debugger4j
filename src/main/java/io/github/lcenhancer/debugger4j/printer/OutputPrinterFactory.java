@@ -50,19 +50,18 @@ public final class OutputPrinterFactory {
      * @param enhancer the LeetcodeJavaDebugEnhancer instance.
      * @return the OutputPrinter instance.
      */
-    @SuppressWarnings(value = {"unchecked", "rawtypes"})
+    @SuppressWarnings(value = {"rawtypes"})
     public static OutputPrinter getOutputPrinter(LeetcodeJavaDebugEnhancer enhancer) {
         AssertUtil.nonNull(enhancer, "The enhancer cannot be null.");
         // Collect all builtin printing strategies.
-        List<BasePrintingStrategy<?>> builtinOutputPrintStrategies = BeanUtil.collectBeans(BasePrintingStrategy.class,
+        List<BasePrintingStrategy> builtinOutputPrintStrategies = BeanUtil.collectBeans(BasePrintingStrategy.class,
                         BUILT_IN_PRINTING_STRATEGY_PACKAGE,
-                        (Class type) -> (
+                        (Class<? extends BasePrintingStrategy> type) -> (
                                 type.isAnnotationPresent(Require.class) &&
                                 ReflectUtil.isExtendsClass(type, BasePrintingStrategy.class) &&
                                 !Modifier.isAbstract(type.getModifiers())
                         ),
-                        ReflectUtil::createInstance)
-                .stream().filter(Objects::nonNull).collect(Collectors.toList());
+                        ReflectUtil::createInstance).stream().filter(Objects::nonNull).collect(Collectors.toList());
         // Add all enhancer's printStrategies to the list.
         if (ContainerUtil.isNotEmpty(enhancer.getOutputPrintStrategies())) {
             builtinOutputPrintStrategies.addAll(enhancer.getOutputPrintStrategies());

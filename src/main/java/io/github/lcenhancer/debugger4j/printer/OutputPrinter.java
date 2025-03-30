@@ -65,7 +65,8 @@ final class OutputPrinter extends BasePrintingStrategy<Object> {
      *
      * @param printingStrategyList the available PrintingStrategy list.
      */
-    OutputPrinter(List<BasePrintingStrategy<?>> printingStrategyList) {
+    @SuppressWarnings("rawtypes")
+    OutputPrinter(List<BasePrintingStrategy> printingStrategyList) {
         this.printingStrategyMap = new HashMap<>();
         // OutputPrinter is also a PrintingStrategy class, so add it to the printingStrategyList.
         printingStrategyList.add(this);

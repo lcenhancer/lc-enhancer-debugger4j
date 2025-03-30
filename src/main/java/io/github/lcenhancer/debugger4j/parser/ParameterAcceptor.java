@@ -44,6 +44,7 @@ import java.util.stream.Collectors;
  * @see IRMatchInputParserNode
  * @since 1.0.0
  */
+@SuppressWarnings("all")
 final class ParameterAcceptor extends BaseParameterAcceptStrategy<BaseParameterAcceptStrategy.ParameterAcceptResult> {
 
     /**
@@ -59,15 +60,16 @@ final class ParameterAcceptor extends BaseParameterAcceptStrategy<BaseParameterA
     /**
      * Create a ParameterAcceptor instance.
      */
-    @SuppressWarnings("all")
     ParameterAcceptor() {
         this.builtinAcceptStrategyMap = new HashMap<>();
         // Collect all builtin parameter acceptance strategies.
         List<BaseParameterAcceptStrategy> strategies = BeanUtil.collectBeans(BaseParameterAcceptStrategy.class,
                 BUILT_IN_PARAMETER_ACCEPTANCE_STRATEGY_PACKAGE,
-                (Class type) -> type.isAnnotationPresent(Require.class) && ReflectUtil.isExtendsClass(type,
-                        BaseParameterAcceptStrategy.class) && !Modifier.isAbstract(type.getModifiers()), (Class<?
-                        extends BaseParameterAcceptStrategy> beanType) -> ReflectUtil.createInstance(beanType))
+                (Class<? extends BaseParameterAcceptStrategy> type) ->
+                        type.isAnnotationPresent(Require.class) &&
+                        ReflectUtil.isExtendsClass(type, BaseParameterAcceptStrategy.class) &&
+                        !Modifier.isAbstract(type.getModifiers()),
+                (Class<? extends BaseParameterAcceptStrategy> beanType) -> ReflectUtil.createInstance(beanType))
                 .stream().filter(Objects::nonNull).collect(Collectors.toList());
         if (ContainerUtil.isNotEmpty(strategies)) {
             // Add all strategies to the builtinAcceptStrategyMap.
@@ -153,7 +155,6 @@ final class ParameterAcceptor extends BaseParameterAcceptStrategy<BaseParameterA
                                             Map<Class<?>, Set<BaseParameterAcceptStrategy<?>>> strategyMap) {
         AssertUtil.nonNull(strategy, "The parameter acceptance strategy cannot be null.");
         AssertUtil.nonNull(type, "The type of the " + strategy + " cannot be null.");
-        strategyMap.computeIfAbsent(type, key -> new TreeSet<>(OrderUtil.descComparator()))
-                   .add(strategy);
+        strategyMap.computeIfAbsent(type, key -> new TreeSet<>(OrderUtil.descComparator())).add(strategy);
     }
 }

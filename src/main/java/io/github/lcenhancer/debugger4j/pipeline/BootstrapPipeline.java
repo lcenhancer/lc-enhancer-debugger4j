@@ -288,7 +288,7 @@ final class BootstrapPipeline extends Pipeline {
      */
     private void setupPipelineRunner(Pipeline pipelineRunner) {
         // Set cur pipeline instance to the pipelineRunner.
-        ReflectUtil.setFieldValue("baseRunner", Pipeline.class, this, pipelineRunner);
+        ReflectUtil.setFieldValue("delegate", Pipeline.class, this, pipelineRunner);
     }
 
     /**

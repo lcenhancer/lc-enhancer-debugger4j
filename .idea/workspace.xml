@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9cc0046b-10e1-4f97-8a93-d74d928d7328" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/IOFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/BaseBufferReaderInputProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/BaseBufferWriterOutputConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/ConsoleInputProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/ConsoleOutputConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/FileInputProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/FileOutputConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/MultipleInputProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/MultipleOutputConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/StringInputProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/printer/OutputPrinter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/printer/OutputPrinterFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/printer/OutputPrinterProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +41,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/IDEAProjectWorkSpace/LcEnhancer/lc-enhancer-debugger4j/src/main/java/io/github/lcenhancer/debugger4j",
+    "last_opened_file_path": "D:/IDEAProjectWorkSpace/LcEnhancer/lc-enhancer-debugger4j/src/main/java/io/github/lcenhancer/debugger4j/utils",
     "settings.editor.selected.configurable": "ssh.settings"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEAProjectWorkSpace\LcEnhancer\lc-enhancer-debugger4j\src\main\java\io\github\lcenhancer\debugger4j\utils" />
       <recent name="D:\IDEAProjectWorkSpace\LcEnhancer\lc-enhancer-debugger4j\src\main\java\io\github\lcenhancer\debugger4j" />
     </key>
   </component>
@@ -64,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1743308166012</updated>
-      <workItem from="1743308167676" duration="4263000" />
+      <workItem from="1743308167676" duration="5590000" />
     </task>
     <servers />
   </component>

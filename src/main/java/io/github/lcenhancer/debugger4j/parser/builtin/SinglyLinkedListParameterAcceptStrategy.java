@@ -1,0 +1,104 @@
+/*
+ * Copyright (C) 2025-2030 Jidcoo(https://github.com/jidcoo).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package io.github.lcenhancer.debugger4j.parser.builtin;
+
+import com.google.gson.reflect.TypeToken;
+import io.github.lcenhancer.base.annotation.Require;
+import io.github.lcenhancer.base.interfaces.Strategizable;
+import io.github.lcenhancer.base.strategy.BaseParameterAcceptStrategy;
+import io.github.lcenhancer.base.struct.ListNode;
+import io.github.lcenhancer.base.utils.AssertUtil;
+
+import java.lang.reflect.Type;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+/**
+ * <p>SinglyLinkedListParameterAcceptStrategy is an parameter
+ * acceptance strategy used to accept {@link ListNode} type
+ * and accept it to a single linked list as {@link ListNode}
+ * instance.</p>
+ *
+ * @author Jidcoo
+ * @see BaseParameterAcceptStrategy
+ * @see ListNode
+ * @since 1.0.0
+ */
+@Require
+public final class SinglyLinkedListParameterAcceptStrategy extends BaseParameterAcceptStrategy<ListNode> {
+
+    /**
+     * Accept the object.
+     *
+     * @param object        the object.
+     * @param type          the parameter type.
+     * @param strategiesMap the strategies map that can be used during this accepting process.
+     *                      <p>The key is the output object class to which this BaseParameterAcceptStrategy
+     *                      applies. The value is a set of strategy with the same accepted type.
+     *                      And the set is sorted the priority of {@link Strategizable} based on
+     *                      {@code getOrder()}.
+     *                      </p>
+     * @return the accepted parameter.
+     */
+    @Override
+    protected ListNode acceptParameter(Object object, Type type,
+                                       Map<Class<?>, Set<BaseParameterAcceptStrategy<?>>> strategiesMap) {
+        AssertUtil.nonNull(object, "The object cannot be null.");
+        ParameterAcceptResult acceptResult = commonAcceptingFunction(
+                strategiesMap,
+                TypeToken.getParameterized(List.class, Integer.class).getType(),
+                object
+        );
+        if (!acceptResult.isAccepted()) {
+            throw new RuntimeException("SinglyLinkedListParameterAcceptStrategy: Cannot accept object as a List<Integer> object: " + acceptResult);
+        }
+        List<Integer> originIntegerList = acceptResult.getObject();
+        if (originIntegerList.isEmpty()) {
+            return null;
+        }
+        ListNode header = null;
+        ListNode last = null;
+        for (Integer val : originIntegerList) {
+            ListNode node = new ListNode(val);
+            if (header == null) header = node;
+            if (last != null) last.next = node;
+            last = node;
+        }
+        return header;
+    }
+
+    /**
+     * Get the order of the object.
+     *
+     * @return the int order of the object.
+     */
+    @Override
+    public int getOrder() {
+        return 0;
+    }
+
+    /**
+     * Get the acceptable type.
+     *
+     * @return the acceptable type.
+     */
+    @Override
+    public Class<? extends ListNode> getAcceptableType() {
+        return ListNode.class;
+    }
+}

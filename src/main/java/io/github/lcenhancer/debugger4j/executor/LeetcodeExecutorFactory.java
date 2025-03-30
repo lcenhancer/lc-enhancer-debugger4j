@@ -1,0 +1,70 @@
+/*
+ * Copyright (C) 2025-2030 Jidcoo(https://github.com/jidcoo).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package io.github.lcenhancer.debugger4j.executor;
+
+import io.github.lcenhancer.base.interfaces.LeetcodeInvoker;
+import io.github.lcenhancer.base.utils.AssertUtil;
+
+import java.util.Objects;
+
+/**
+ * <p>LeetcodeExecutorFactory is a factory class
+ * to product the {@link LeetcodeExecutor}
+ * instance.</p>
+ *
+ * @author Jidcoo
+ * @since 1.0.0
+ */
+public final class LeetcodeExecutorFactory {
+
+    /**
+     * Product a LeetcodeExecutor instance by leetcode instance.
+     *
+     * @param instance         the leetcode instance.
+     * @param leetcodeInvokers the leetcode invokers.
+     * @return the LeetcodeExecutor instance.
+     */
+    public static LeetcodeExecutor getLeetcodeExecutor(Object instance, LeetcodeInvoker... leetcodeInvokers) {
+        AssertUtil.nonNull(instance, "The instance cannot be null.");
+        LeetcodeInvoker primaryInvoker = leetcodeInvokers.length > 0 ? leetcodeInvokers[0] : null;
+        LeetcodeExecutor executor = new LeetcodeExecutor(instance, primaryInvoker);
+        for (int i = 1; i < leetcodeInvokers.length; i++) {
+            LeetcodeInvoker leetcodeInvoker = leetcodeInvokers[i];
+            if (Objects.nonNull(leetcodeInvoker)) {
+                // Add non-null leetcode invoker.
+                executor.getCandidateInvokers().add(leetcodeInvoker);
+            }
+        }
+        return executor;
+    }
+
+    /**
+     * Product a LeetcodeExecutor instance by copying the original
+     * <tt>LeetcodeExecutor</tt> instance.
+     *
+     * @param instance the original LeetcodeExecutor instance.
+     * @return the LeetcodeExecutor instance.
+     */
+    public static LeetcodeExecutor copyByLeetcodeExecutor(Object instance) {
+        AssertUtil.nonNull(instance, "The instance cannot be null.");
+        AssertUtil.isTrue(instance instanceof LeetcodeExecutor, "The instance is not a LeetcodeExecutor instance.");
+        LeetcodeExecutor curInstance = (LeetcodeExecutor) instance;
+        LeetcodeExecutor newInstance = new LeetcodeExecutor(curInstance.getInstance(), curInstance.getExecutor());
+        newInstance.getCandidateInvokers().addAll(curInstance.getCandidateInvokers());
+        return newInstance;
+    }
+}

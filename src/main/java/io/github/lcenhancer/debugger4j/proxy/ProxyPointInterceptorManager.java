@@ -23,10 +23,9 @@ import io.github.lcenhancer.base.proxy.ProxyPointParameterView;
 import io.github.lcenhancer.base.utils.*;
 
 import java.lang.reflect.Modifier;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * <p>ProxyPointInterceptorManager is a proxy point interceptor
@@ -56,8 +55,15 @@ final class ProxyPointInterceptorManager {
      * Create a ProxyPointInterceptorManager instance.
      */
     ProxyPointInterceptorManager() {
-        // init all proxy point interceptors.
-        proxyPointInterceptorsMap = BeanUtil.collectBeans(ProxyPointInterceptor.class, PROXY_POINT_INTERCEPTOR_SCANNER_BASE_PACKAGE,
+        // Load instance from spi.
+        List<ProxyPointInterceptor> spiInstances = new ArrayList<>();
+        ServiceLoader<ProxyPointInterceptor> serviceLoader = ServiceLoader.load(ProxyPointInterceptor.class);
+        serviceLoader.forEach(spiInstances::add);
+
+        // Load instance from builtin package.
+        List<ProxyPointInterceptor> builtinInstances = BeanUtil.collectBeans(
+                ProxyPointInterceptor.class,
+                PROXY_POINT_INTERCEPTOR_SCANNER_BASE_PACKAGE,
                 (Class<? extends ProxyPointInterceptor> type) -> {
                     boolean baseValidResult = type.isAnnotationPresent(Require.class)
                             && ReflectUtil.isImplementInterface(type, ProxyPointInterceptor.class)
@@ -65,18 +71,28 @@ final class ProxyPointInterceptorManager {
                     if (!baseValidResult) {
                         return false;
                     }
-                    Require requireAnnotation = (Require) type.getAnnotation(Require.class);
+                    Require requireAnnotation = type.getAnnotation(Require.class);
                     return requireAnnotation.types().length > 0 && ProxyPointInterceptor.class.equals(requireAnnotation.types()[0]);
                 },
                 ReflectUtil::createInstance
-        ).stream().filter(Objects::nonNull).collect(
-                Collectors.groupingBy(ProxyPointInterceptor::interceptPoint,
-                Collectors.collectingAndThen(Collectors.toList(),
-                list -> {
-                    OrderUtil.descSort(list);
-                    return list;
-                }
-        )));
+        );
+
+        // Map interceptor instance by interceptPoint.
+        proxyPointInterceptorsMap =
+        Stream.of(spiInstances, builtinInstances)
+              .filter(Objects::nonNull)
+              .flatMap(Collection::stream)
+              .filter(Objects::nonNull)
+              .collect(Collectors.groupingBy(
+                      ProxyPointInterceptor::interceptPoint,
+                      Collectors.collectingAndThen(Collectors.toList(),
+                                                   list -> {
+                                                        OrderUtil.descSort(list);
+                                                        return list;
+                                                   }
+                      )
+              )
+        );
     }
 
     /**

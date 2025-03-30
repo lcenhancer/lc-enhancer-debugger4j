@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9cc0046b-10e1-4f97-8a93-d74d928d7328" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/printer/OutputPrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/printer/OutputPrinterFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/printer/OutputPrinterProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/proxy/EnhancerProxyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/proxy/EnhancerProxyHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/proxy/ProxyPointInterceptorManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,14 +40,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/IDEAProjectWorkSpace/LcEnhancer/lc-enhancer-debugger4j/src/main/java/io/github/lcenhancer/debugger4j/utils",
+    "last_opened_file_path": "D:/IDEAProjectWorkSpace/LcEnhancer/lc-enhancer-debugger4j/src/main/java/io/github/lcenhancer/debugger4j",
     "settings.editor.selected.configurable": "ssh.settings"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IDEAProjectWorkSpace\LcEnhancer\lc-enhancer-debugger4j\src\main\java\io\github\lcenhancer\debugger4j\utils" />
       <recent name="D:\IDEAProjectWorkSpace\LcEnhancer\lc-enhancer-debugger4j\src\main\java\io\github\lcenhancer\debugger4j" />
+      <recent name="D:\IDEAProjectWorkSpace\LcEnhancer\lc-enhancer-debugger4j\src\main\java\io\github\lcenhancer\debugger4j\utils" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -59,7 +58,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1743308166012</updated>
-      <workItem from="1743308167676" duration="5590000" />
+      <workItem from="1743308167676" duration="6697000" />
     </task>
     <servers />
   </component>

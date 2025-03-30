@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cc0046b-10e1-4f97-8a93-d74d928d7328" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/proxy/bi/require/io/AbsIORequireSupporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/proxy/bi/require/io/InputProviderRequireInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/proxy/bi/require/io/OutputConsumerRequireInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/proxy/ProxyPointInterceptorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/proxy/ProxyPointInterceptorManager.java" afterDir="false" />
-    </list>
+    <list default="true" id="9cc0046b-10e1-4f97-8a93-d74d928d7328" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,7 +48,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/IDEAProjectWorkSpace/LcEnhancer/lc-enhancer-debugger4j/src/main/java/io/github/lcenhancer/debugger4j/proxy/bi/require/io",
+    "last_opened_file_path": "D:/IDEAProjectWorkSpace/LcEnhancer/lc-enhancer-debugger4j/src/main/java/io/github/lcenhancer/debugger4j/proxy/bi/payload",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.27560717",
@@ -55,6 +57,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEAProjectWorkSpace\LcEnhancer\lc-enhancer-debugger4j\src\main\java\io\github\lcenhancer\debugger4j\proxy\bi\payload" />
       <recent name="D:\IDEAProjectWorkSpace\LcEnhancer\lc-enhancer-debugger4j\src\main\java\io\github\lcenhancer\debugger4j\proxy\bi\require\io" />
       <recent name="D:\IDEAProjectWorkSpace\LcEnhancer\lc-enhancer-debugger4j\src\main\java\io\github\lcenhancer\debugger4j" />
       <recent name="D:\IDEAProjectWorkSpace\LcEnhancer\lc-enhancer-debugger4j\src\main\java\io\github\lcenhancer\debugger4j\utils" />
@@ -68,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1743308166012</updated>
-      <workItem from="1743308167676" duration="18392000" />
+      <workItem from="1743308167676" duration="19919000" />
     </task>
     <servers />
   </component>

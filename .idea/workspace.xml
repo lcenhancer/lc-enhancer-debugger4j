@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9cc0046b-10e1-4f97-8a93-d74d928d7328" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/proxy/bi/require/io/AbsIORequireSupporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/proxy/bi/require/io/InputProviderRequireInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/proxy/bi/require/io/OutputConsumerRequireInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/proxy/ProxyPointInterceptorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/proxy/ProxyPointInterceptorManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1743308166012</updated>
-      <workItem from="1743308167676" duration="18046000" />
+      <workItem from="1743308167676" duration="18392000" />
     </task>
     <servers />
   </component>

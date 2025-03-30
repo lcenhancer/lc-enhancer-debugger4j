@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9cc0046b-10e1-4f97-8a93-d74d928d7328" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/IOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/BaseBufferReaderInputProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/BaseBufferWriterOutputConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/ConsoleInputProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/ConsoleOutputConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/FileInputProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/FileOutputConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/MultipleInputProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/MultipleOutputConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/lcenhancer/debugger4j/io/builtin/StringInputProvider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +64,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1743308166012</updated>
-      <workItem from="1743308167676" duration="2666000" />
+      <workItem from="1743308167676" duration="4263000" />
     </task>
     <servers />
   </component>

@@ -23,9 +23,9 @@ import io.github.lcenhancer.base.interfaces.OutputConsumer;
 import io.github.lcenhancer.base.interfaces.ProxyPointInterceptor;
 import io.github.lcenhancer.base.utils.AssertUtil;
 import io.github.lcenhancer.base.utils.ContainerUtil;
-import io.github.lcenhancer.debugger4j.io.builtin.ConsoleOutputConsumer;
-import io.github.lcenhancer.debugger4j.io.builtin.FileOutputConsumer;
-import io.github.lcenhancer.debugger4j.io.builtin.MultipleOutputConsumer;
+import io.github.lcenhancer.base.impl.io.ConsoleOutputConsumer;
+import io.github.lcenhancer.base.impl.io.FileOutputConsumer;
+import io.github.lcenhancer.base.impl.io.MultipleOutputConsumer;
 
 import java.io.IOException;
 import java.util.List;

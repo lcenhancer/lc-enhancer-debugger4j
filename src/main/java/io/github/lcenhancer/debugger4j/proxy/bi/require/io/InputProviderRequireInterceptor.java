@@ -23,10 +23,10 @@ import io.github.lcenhancer.base.interfaces.LeetcodeJavaDebugEnhancer;
 import io.github.lcenhancer.base.interfaces.ProxyPointInterceptor;
 import io.github.lcenhancer.base.utils.AssertUtil;
 import io.github.lcenhancer.base.utils.ContainerUtil;
-import io.github.lcenhancer.debugger4j.io.builtin.ConsoleInputProvider;
-import io.github.lcenhancer.debugger4j.io.builtin.FileInputProvider;
-import io.github.lcenhancer.debugger4j.io.builtin.MultipleInputProvider;
-import io.github.lcenhancer.debugger4j.io.builtin.StringInputProvider;
+import io.github.lcenhancer.base.impl.io.ConsoleInputProvider;
+import io.github.lcenhancer.base.impl.io.FileInputProvider;
+import io.github.lcenhancer.base.impl.io.MultipleInputProvider;
+import io.github.lcenhancer.base.impl.io.StringInputProvider;
 
 import java.io.IOException;
 import java.util.List;

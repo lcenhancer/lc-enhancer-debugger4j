@@ -20,8 +20,8 @@ import io.github.lcenhancer.base.interfaces.InputProvider;
 import io.github.lcenhancer.base.interfaces.LeetcodeJavaDebugEnhancer;
 import io.github.lcenhancer.base.interfaces.OutputConsumer;
 import io.github.lcenhancer.base.utils.AssertUtil;
-import io.github.lcenhancer.debugger4j.io.builtin.ConsoleInputProvider;
-import io.github.lcenhancer.debugger4j.io.builtin.ConsoleOutputConsumer;
+import io.github.lcenhancer.base.impl.io.ConsoleInputProvider;
+import io.github.lcenhancer.base.impl.io.ConsoleOutputConsumer;
 
 import java.util.Objects;
 

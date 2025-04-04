@@ -19,8 +19,8 @@ package io.github.lcenhancer.debugger4j.testset4;
 import io.github.lcenhancer.base.annotation.Require;
 import io.github.lcenhancer.base.interfaces.LeetcodeJavaDebugEnhancer;
 import io.github.lcenhancer.debugger4j.UnitTestDriver;
-import io.github.lcenhancer.debugger4j.io.builtin.ConsoleInputProvider;
-import io.github.lcenhancer.debugger4j.io.builtin.ConsoleOutputConsumer;
+import io.github.lcenhancer.base.impl.io.ConsoleInputProvider;
+import io.github.lcenhancer.base.impl.io.ConsoleOutputConsumer;
 import org.junit.Before;
 
 import java.util.HashMap;

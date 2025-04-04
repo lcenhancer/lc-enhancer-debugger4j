@@ -19,7 +19,7 @@ package io.github.lcenhancer.debugger4j.testset1;
 import io.github.lcenhancer.base.annotation.Require;
 import io.github.lcenhancer.base.interfaces.LeetcodeJavaDebugEnhancer;
 import io.github.lcenhancer.debugger4j.UnitTestDriver;
-import io.github.lcenhancer.debugger4j.io.builtin.StringInputProvider;
+import io.github.lcenhancer.base.impl.io.StringInputProvider;
 import org.junit.Before;
 
 /**

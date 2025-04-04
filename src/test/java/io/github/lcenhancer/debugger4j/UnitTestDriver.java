@@ -17,7 +17,7 @@
 package io.github.lcenhancer.debugger4j;
 
 import io.github.lcenhancer.base.interfaces.OutputConsumer;
-import io.github.lcenhancer.debugger4j.io.builtin.MultipleOutputConsumer;
+import io.github.lcenhancer.base.impl.io.MultipleOutputConsumer;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

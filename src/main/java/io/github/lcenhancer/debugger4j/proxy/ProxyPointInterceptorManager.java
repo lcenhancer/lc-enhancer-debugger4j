@@ -64,7 +64,7 @@ final class ProxyPointInterceptorManager {
         List<ProxyPointInterceptor> builtinInstances = BeanUtil.collectBeans(
                 ProxyPointInterceptor.class,
                 PROXY_POINT_INTERCEPTOR_SCANNER_BASE_PACKAGE,
-                (Class<? extends ProxyPointInterceptor> type) -> {
+                (Class<ProxyPointInterceptor> type) -> {
                     boolean baseValidResult = type.isAnnotationPresent(Require.class)
                             && ReflectUtil.isImplementInterface(type, ProxyPointInterceptor.class)
                             && !Modifier.isAbstract(type.getModifiers());

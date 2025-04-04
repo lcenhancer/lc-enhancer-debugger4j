@@ -65,11 +65,11 @@ final class ParameterAcceptor extends BaseParameterAcceptStrategy<BaseParameterA
         // Collect all builtin parameter acceptance strategies.
         List<BaseParameterAcceptStrategy> strategies = BeanUtil.collectBeans(BaseParameterAcceptStrategy.class,
                 BUILT_IN_PARAMETER_ACCEPTANCE_STRATEGY_PACKAGE,
-                (Class<? extends BaseParameterAcceptStrategy> type) ->
+                (Class<BaseParameterAcceptStrategy> type) ->
                         type.isAnnotationPresent(Require.class) &&
                         ReflectUtil.isExtendsClass(type, BaseParameterAcceptStrategy.class) &&
                         !Modifier.isAbstract(type.getModifiers()),
-                (Class<? extends BaseParameterAcceptStrategy> beanType) -> ReflectUtil.createInstance(beanType))
+                (Class<BaseParameterAcceptStrategy> beanType) -> ReflectUtil.createInstance(beanType))
                 .stream().filter(Objects::nonNull).collect(Collectors.toList());
         if (ContainerUtil.isNotEmpty(strategies)) {
             // Add all strategies to the builtinAcceptStrategyMap.

@@ -56,7 +56,7 @@ public final class OutputPrinterFactory {
         // Collect all builtin printing strategies.
         List<BasePrintingStrategy> builtinOutputPrintStrategies = BeanUtil.collectBeans(BasePrintingStrategy.class,
                         BUILT_IN_PRINTING_STRATEGY_PACKAGE,
-                        (Class<? extends BasePrintingStrategy> type) -> (
+                        (Class<BasePrintingStrategy> type) -> (
                                 type.isAnnotationPresent(Require.class) &&
                                 ReflectUtil.isExtendsClass(type, BasePrintingStrategy.class) &&
                                 !Modifier.isAbstract(type.getModifiers())

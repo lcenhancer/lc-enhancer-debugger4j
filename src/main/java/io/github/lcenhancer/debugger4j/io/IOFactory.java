@@ -45,8 +45,9 @@ public final class IOFactory {
      */
     public static InputProvider getInputProvider(LeetcodeJavaDebugEnhancer enhancer) {
         AssertUtil.nonNull(enhancer, "The enhancer cannot be null.");
-        if (Objects.nonNull(enhancer.getInputProvider())) {
-            return enhancer.getInputProvider();
+        InputProvider inputProvider = enhancer.getInputProvider();
+        if (Objects.nonNull(inputProvider)) {
+            return inputProvider;
         }
         // By default, the console is used as the input provider.
         return new ConsoleInputProvider();
@@ -61,8 +62,9 @@ public final class IOFactory {
      */
     public static OutputConsumer getOutputConsumer(LeetcodeJavaDebugEnhancer enhancer) {
         AssertUtil.nonNull(enhancer, "The enhancer cannot be null.");
-        if (Objects.nonNull(enhancer.getOutputConsumer())) {
-            return enhancer.getOutputConsumer();
+        OutputConsumer outputConsumer = enhancer.getOutputConsumer();
+        if (Objects.nonNull(outputConsumer)) {
+            return outputConsumer;
         }
         // By default, the console is used as the output consumer.
         return new ConsoleOutputConsumer();

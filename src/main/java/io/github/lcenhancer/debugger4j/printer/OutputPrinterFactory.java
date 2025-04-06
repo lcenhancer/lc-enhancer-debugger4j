@@ -63,8 +63,9 @@ public final class OutputPrinterFactory {
                         ),
                         ReflectUtil::createInstance).stream().filter(Objects::nonNull).collect(Collectors.toList());
         // Add all enhancer's printStrategies to the list.
-        if (ContainerUtil.isNotEmpty(enhancer.getOutputPrintStrategies())) {
-            builtinOutputPrintStrategies.addAll(enhancer.getOutputPrintStrategies());
+        List<BasePrintingStrategy<?>> outputPrintStrategies = enhancer.getOutputPrintStrategies();
+        if (ContainerUtil.isNotEmpty(outputPrintStrategies)) {
+            builtinOutputPrintStrategies.addAll(outputPrintStrategies);
         }
         return new OutputPrinter(builtinOutputPrintStrategies);
     }

@@ -48,7 +48,7 @@ public final class InputParserProcessor {
     @SuppressWarnings("unchecked")
     public static Object process(Object parser, Object executor, Object input) {
         AssertUtil.nonNull(parser, "The parser cannot be null.");
-        AssertUtil.nonNull(executor, "The parser cannot be null.");
+        AssertUtil.nonNull(executor, "The executor cannot be null.");
         AssertUtil.nonNull(input, "The input cannot be null.");
         AssertUtil.isTrue((input instanceof String || input instanceof List),
                 "Unsupported input type: " + input.getClass());
